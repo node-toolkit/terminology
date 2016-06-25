@@ -1,0 +1,73 @@
+{
+  "boilerplate": {
+    "definition": "Typically, the term `boilerplate` refers to generic code that is often used when creating projects. Here, we use the term to decribe \"boilerplate configurations\", which consist of all of the necessary files required to initialize a complete project. Boilerplates can be used by [generators](#generator) to create new projects.",
+    "related": {
+      "definitions": ["init", "scaffold", "snippet", "template"],
+      "urls": []
+    }
+  },
+  "component": {
+    "definition": "",
+    "related": {
+      "definitions": [],
+      "urls": []
+    }
+  },
+  "config": {
+    "definition": "Typically used to describe a declarative configuration, consisting of `files` definitions (`src` glob patterns, `dest` directory, and so on), but also sometimes used to describe an `options` object.",
+    "related": {
+      "definitions": [],
+      "urls": []
+    }
+  },
+  "config file": {
+    "definition": "A named file, like `gulpfile.js`, `verbfile.js`, or `generator.js`, that contains custom configuration settings and runtime code for the associated application.",
+    "related": {
+      "definitions": [],
+      "urls": []
+    }
+  },
+  "generator": {
+    "definition": "",
+    "related": {
+      "definitions": [],
+      "urls": []
+    }
+  },
+  "init": {
+    "definition": "To initialize or create a new project.",
+    "related": {
+      "definitions": [],
+      "urls": []
+    }
+  },
+  "scaffold": {
+    "definition": "Consists of one or more templates or source files and serves as a \"temporary support structure\" that may be used to initialize a new project, or to provide ad-hoc \"components\" throughout the duration of a project. ",
+    "related": {
+      "definitions": ["boilerplate", "snippet", "template"],
+      "urls": []
+    }
+  },
+  "snippet": {
+    "definition": "",
+    "related": {
+      "definitions": ["boilerplate", "scaffold", "template"],
+      "urls": []
+    }
+  },
+  "task": {
+    "definition": "An asynchronous function that wraps code to be executed at a later, pre-determined point.",
+    "related": {
+      "definitions": [],
+      "urls": []
+    }
+  },
+  "template": {
+    "definition": "Resuable file, code or content that contains \"placeholder\" values, which will eventually be replaced with real values by a rendering (template) engine",
+    "related": {
+      "definitions": ["boilerplate", "scaffold", "snippet"],
+      "repos": ["templates"],
+      "urls": []
+    }
+  },
+}

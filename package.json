@@ -1,0 +1,21 @@
+{
+  "name": "terminology",
+  "description": "Common terminology shared by all of the applications in the toolkit suite.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/terminology",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/terminology",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/terminology/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "terminology"
+  ]
+}
