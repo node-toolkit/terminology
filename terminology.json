@@ -38,7 +38,7 @@
     "definition": "To initialize or create a new project.",
     "related": {
       "definitions": [],
-      "urls": []
+      "repos": ["generate"]
     }
   },
   "scaffold": {
@@ -69,5 +69,5 @@
       "repos": ["templates"],
       "urls": []
     }
-  },
+  }
 }
