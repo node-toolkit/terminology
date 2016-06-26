@@ -1,5 +1,7 @@
 # Terminology
 
+The definitions used in this document describe how these concepts work as it relates to [toolkit](https://github.com/toolkit) projects.
+
 ## boilerplate
 
 Typically, the term `boilerplate` refers to generic code that is often used when creating projects. Here, we use the term to decribe "boilerplate configurations", which consist of all of the necessary files required to initialize a complete project. Boilerplates can be used by [generators](#generator) to create new projects.
