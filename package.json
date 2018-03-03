@@ -1,32 +1,34 @@
 {
   "name": "terminology",
-  "description": "Common terminology shared by all of the applications in the toolkit suite.",
+  "description": "Common vocabulary shared by all projects in the toolkit suite.",
   "version": "0.1.0",
-  "homepage": "https://github.com/jonschlinkert/terminology",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
-  "repository": "jonschlinkert/terminology",
+  "homepage": "https://github.com/node-toolkit/terminology",
+  "repository": "node-toolkit/terminology",
   "bugs": {
-    "url": "https://github.com/jonschlinkert/terminology/issues"
+    "url": "https://github.com/node-toolkit/terminology/issues"
   },
   "license": "MIT",
   "engines": {
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "mocha"
+    "install": "npm install -g verbose/verb#dev verb-generate-readme"
+  },
+  "devDependencies": {
+    "gulp-format-md": "^1.0.0",
+    "js-yaml": "^3.10.0",
+    "verb-generate-readme": "^0.6.0"
   },
   "keywords": [
+    "toolkit",
     "terminology"
   ],
-  "devDependencies": {
-    "gulp-format-md": "^0.1.9"
-  },
   "verb": {
-    "toc": false,
-    "layout": "minimal",
-    "data": {
-      "terminology": {}
+    "toc": {
+      "method": "postRender"
     },
+    "layout": "minimal",
     "tasks": [
       "readme"
     ],
