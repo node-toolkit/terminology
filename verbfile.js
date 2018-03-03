@@ -1,56 +1,56 @@
 'use strict';
 
-var path = require('path');
+const path = require('path');
+const yaml = require('js-yaml');
+let loaded = false;
 
-module.exports = function(verb) {
-  verb.data.options.namespace = function(fp) {
+module.exports = function(app) {
+  app.use(require('verb-generate-readme'));
+
+  app.data.options.namespace = function(fp) {
     return path.basename(fp, path.extname(fp));
   };
 
-  verb.base.helper('words', function(words) {
-    words = words || [];
-    var len = words.length;
-    if (len === 0) {
-      return '';
-    }
+  function loadOnce() {
+    loaded = true;
+    app.dataLoader(/\.yml$/, function(data) {
+      return yaml.safeLoad(data);
+    });
+    app.data('terminology.yml');
+  }
 
-    var idx = -1;
-    var str = '**Related words**: ';
+  if (!loaded) {
+    loadOnce();
+  }
 
-    while (++idx < len) {
-      var word = words[idx];
-      if (idx !== 0 && idx < len) {
+  app.helper('words', function(words = []) {
+    let str = '**Related words**: ';
+    const len = words.length;
+    if (len === 0) return '';
+
+    for (let i = 0; i < len; i++) {
+      const word = words[i];
+      if (i !== 0 && i < len) {
         str += ', ';
       }
       str += '[' + word + '](#' + word + ')';
     }
-
     return str;
   });
 
-  verb.base.helper('projects', function(repos) {
-    repos = repos || [];
-    var len = repos.length;
-    if (len === 0) {
-      return '';
-    }
+  app.helper('projects', function(repos = []) {
+    let str = '**Related projects**: ';
+    const len = repos.length;
+    if (len === 0) return '';
 
-    var idx = -1;
-    var str = '**Related projects**: ';
-
-    while (++idx < len) {
-      var repo = repos[idx];
-      if (idx !== 0 && idx < len) {
+    for (let i = 0; i < len; i++) {
+      const repo = repos[i];
+      if (i !== 0 && i < len) {
         str += ', ';
       }
       str += '[' + repo + '][]';
     }
 
     return str;
-  });
-
-  verb.base.data('terminology.json');
-  verb.task('default', function(cb) {
-    verb.generate(['verb-readme-generator'], cb);
   });
 };
